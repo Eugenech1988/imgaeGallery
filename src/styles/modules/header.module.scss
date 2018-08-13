@@ -10,7 +10,7 @@
 }
 
 .logo {
-  max-width: 70px;
+  max-width: 170px;
   display: block;
   height: 28px;
   transition: opacity .3s ease;
@@ -18,7 +18,7 @@
     opacity: .5;
   }
   svg {
-    width: 80px;
+    width: 240px;
     transform: scale(0.35); //TODO don't steal logos))))
     transform-origin: left top;
   }
@@ -103,5 +103,9 @@
     position: absolute;
     left: 50%;
     top: 11px;
+    max-width: 80px;
+    svg {
+      max-width: 80px;
+    }
   }
 }

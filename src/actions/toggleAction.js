@@ -1,6 +1,6 @@
 import {
   OPEN_GALLERY_MODAL,
-  CLOSE_GALLERY_MODAL
+  CLOSE_GALLERY_MODAL, TOGGLE_HEADER
 } from 'constants/toggleConst';
 
 export const openGalleryModal = () => ({
@@ -9,4 +9,8 @@ export const openGalleryModal = () => ({
 
 export const closeGalleryModal = () => ({
   type: CLOSE_GALLERY_MODAL
+});
+
+export const toggleHeader = () => ({
+  type: TOGGLE_HEADER
 });
