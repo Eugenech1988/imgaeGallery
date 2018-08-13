@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import styles from 'styles/modules/header.module.scss'
+import styles from 'styles/modules/header.module.scss';
 
 import Logo from 'components/Logo';
-import Login from 'components/Login'
+import Nav from 'components/Nav';
 
 class Header extends Component {
+  handleClick(e) {
+    e.preventDefault();
+  }
+
   render() {
     return (
       <header className={styles.header}>
-        <div className={styles.blockLeft}>
-          <Logo/>
-        </div>
-        <div className={styles.blockRight}>
-          <Login/>
-        </div>
+        <button
+          className={styles.burger}
+          onClick={::this.handleClick}
+        />
+        <Logo/>
+        <Nav/>
       </header>
     );
   }
 }
-
-Header.propTypes = {};
 
 export default Header;

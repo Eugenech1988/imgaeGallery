@@ -6,8 +6,6 @@ import styles from 'styles/modules/gallery.module.scss';
 import { openGalleryModal } from 'actions/toggleAction';
 import { setImageUrl } from 'actions/imageUrlAction';
 
-const mapStateToProps = state => ({});
-
 const mapDispatchToProps = dispatch => ({
   openGalleryModal: () => dispatch(openGalleryModal()),
   setImageUrl: (url) => dispatch(setImageUrl(url))

@@ -9,8 +9,6 @@ const mapStateToProps = state => ({
   images: state.images
 });
 
-const mapDispatchToProps = dispatch => ({});
-
 @connect(mapStateToProps)
 class Gallery extends Component {
   render() {

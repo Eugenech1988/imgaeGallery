@@ -14,8 +14,6 @@ const mapStateToProps = state => ({
   isGalleryModalOpen: state.toggles.isGalleryModalOpen
 });
 
-const mapDispatchToProps = dispatch => ({});
-
 @connect(mapStateToProps)
 class MainPage extends Component {
   render() {

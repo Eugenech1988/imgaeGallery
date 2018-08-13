@@ -1,12 +1,10 @@
 import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
-import cx from 'classnames';
 
 import styles from 'styles/modules/header.module.scss';
 
-const Login = props => {
+const Nav = props => {
     return (
-      <Fragment>
+      <nav className={styles.wrapper}>
         <button className={styles.signUpBtn}>
           <span>
             Sign Up
@@ -21,10 +19,8 @@ const Login = props => {
           type="text"
           placeholder='Search'
           className={styles.search}/>
-      </Fragment>
+      </nav>
     );
 };
 
-Login.propTypes = {};
-
-export default Login;
+export default Nav;

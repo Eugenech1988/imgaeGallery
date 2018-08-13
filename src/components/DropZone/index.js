@@ -6,8 +6,6 @@ import Dropzone from 'react-dropzone';
 import styles from 'styles/modules/dropzone.module.scss';
 import {uploadImage} from 'actions/imagesAction';
 
-const mapStateToProps = state => ({});
-
 const mapDispatchToProps = dispatch => ({
   uploadImage: (link, id) => dispatch(uploadImage(link, id))
 });
