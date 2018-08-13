@@ -1,6 +1,7 @@
 import {
   UPLOAD_IMAGE_ERROR,
-  UPLOAD_IMAGE_SUCCESS
+  UPLOAD_IMAGE_SUCCESS,
+  SET_IMAGES_FROM_STORE
 } from 'constants/imagesConst';
 import {startLoading, finishLoading} from './loaderAction';
 import {uploadFilesRequest} from 'api/POST/uploadFIlesRequest';
@@ -31,3 +32,7 @@ export const uploadImage = (file) => dispatch => {
     })
 };
 
+export const setImagesFromStore = payload => ({
+  type: SET_IMAGES_FROM_STORE,
+  payload
+});

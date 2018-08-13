@@ -7,6 +7,7 @@ import Dropper from 'components/DropZone';
 import Gallery from 'components/Gallery';
 import Loader from 'components/Loader';
 import ModalPortal from 'containers/ModalPortal';
+import {setImagesFromStore} from 'actions/imagesAction';
 import styles from 'styles/modules/main-page.module.scss';
 
 const mapStateToProps = state => ({
@@ -14,8 +15,17 @@ const mapStateToProps = state => ({
   isGalleryModalOpen: state.toggles.isGalleryModalOpen
 });
 
-@connect(mapStateToProps)
+const mapDispatchToProps = dispatch => ({
+  setImagesFromStore: (urls) => dispatch(setImagesFromStore(urls))
+});
+
+@connect(mapStateToProps, mapDispatchToProps)
 class MainPage extends Component {
+  componentDidMount() {
+    const { setImagesFromStore } = this.props;
+    const imagesList = JSON.parse(localStorage.getItem('galleryImagesUrls') || '[]');
+    setImagesFromStore(imagesList);
+  }
   render() {
     const { loading, isGalleryModalOpen } = this.props;
     return (
@@ -53,7 +63,8 @@ class MainPage extends Component {
 
 MainPage.propTypes = {
   loading: PropTypes.bool,
-  isGalleryModalOpen: PropTypes.bool
+  isGalleryModalOpen: PropTypes.bool,
+  setImagesFromStore: PropTypes.func
 };
 
 export default MainPage;
