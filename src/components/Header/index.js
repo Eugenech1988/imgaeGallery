@@ -2,16 +2,21 @@ import React, { Component } from 'react';
 import styles from 'styles/modules/header.module.scss';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 
 import {toggleHeader} from 'actions/toggleAction';
 import Logo from 'components/Logo';
 import Nav from 'components/Nav';
 
+const mapStateToProps = state => ({
+  isHeaderOpened: state.toggles.isHeaderOpened
+});
+
 const mapDispatchToProps = dispatch => ({
   toggleHeader: () => dispatch(toggleHeader())
 });
 
-@connect(null, mapDispatchToProps)
+@connect(mapStateToProps, mapDispatchToProps)
 class Header extends Component {
   handleClick(e) {
     const {toggleHeader} = this.props;
@@ -20,8 +25,9 @@ class Header extends Component {
   }
 
   render() {
+    const {isHeaderOpened} = this.props;
     return (
-      <header className={styles.header}>
+      <header className={cx(styles.header, {opened: isHeaderOpened})}>
         <button
           className={styles.burger}
           onClick={::this.handleClick}
@@ -34,7 +40,8 @@ class Header extends Component {
 }
 
 Header.propTypes = {
-  toggleHeader: PropTypes.func
+  toggleHeader: PropTypes.func,
+  isHeaderOpened: PropTypes.Bool
 };
 
 export default Header;

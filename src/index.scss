@@ -533,3 +533,9 @@ input {
     transition: all .5s;
   }
 }
+
+@media (max-width: 767px) {
+  .wrapper {
+    padding-top: 50px;
+  }
+}

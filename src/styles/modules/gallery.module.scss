@@ -36,3 +36,26 @@
   height: 100%;
   display: block;
 }
+
+@media (max-width: 767px) {
+  .wrapper {
+    padding-top: 0;
+  }
+  .galleryList {
+    flex-direction: column;
+  }
+  .galleryItem {
+    width: 100%;
+    margin: {
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 15px;
+    }
+    height: auto;
+  }
+  .galleryImg {
+    width: 100%;
+    height: auto;
+  }
+}

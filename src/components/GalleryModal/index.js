@@ -33,7 +33,7 @@ class GalleryModal extends Component {
             <i className={styles.close} onClick={this.handleCloseModal}>
               <img src={iconClose} alt=''/>
             </i>
-            <img src={imgUrl} alt=''/>
+            <img className={styles.image} src={imgUrl} alt=''/>
           </div>
         </div>
       </Fragment>

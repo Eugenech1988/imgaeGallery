@@ -28,7 +28,7 @@ export const uploadImage = (file) => dispatch => {
     .catch(err => {
       dispatch(uploadImageError());
       dispatch(finishLoading());
-      console.log(err);
+      alert('not supported format');
     })
 };
 

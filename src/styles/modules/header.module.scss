@@ -96,9 +96,57 @@
     display: block;
   }
   .header {
-    display: block;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    padding-bottom: 5px;
+    transition: all .3s ease;
+    max-height: 50px;
+    padding-top: 50px;
+    &:global(.opened) {
+      max-height: initial;
+      .navWrapper {
+        opacity: 1;
+      }
+      .burger {
+        background-color: transparent;
+        &:before,
+        &:after {
+          top: 50%;
+          transform: translateY(-50%);
+        }
+        &:before {
+          transform: rotate(-45deg);
+        }
+        &:after {
+          transform: rotate(45deg)
+        }
+      }
+      .navWrapper {
+        display: flex;
+      }
+    }
   }
-
+  .navWrapper {
+    display: none;
+    transition: opacity .3s ease;
+    flex-direction: column-reverse;
+    width: 100%;
+    text-align: left;
+    opacity: 0;
+  }
+  .signInBtn,
+  .signUpBtn {
+    text-align: left;
+    margin-left: 0;
+  }
+  .search {
+    width: 100%;
+    max-width: initial;
+    height: 35px;
+  }
   .logo {
     position: absolute;
     left: 50%;

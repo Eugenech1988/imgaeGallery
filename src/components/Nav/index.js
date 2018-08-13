@@ -4,7 +4,7 @@ import styles from 'styles/modules/header.module.scss';
 
 const Nav = props => {
     return (
-      <nav className={styles.wrapper}>
+      <nav className={styles.navWrapper}>
         <button className={styles.signUpBtn}>
           <span>
             Sign Up
