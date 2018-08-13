@@ -520,13 +520,13 @@ input {
   opacity: 0;
 
   &.fade-enter-active {
-    opacity: .9;
+    opacity: 1;
     transition: all .5s;
   }
 }
 
 .fade-exit {
-  opacity: .9;
+  opacity: 1;
 
   &.fade-exit-active {
     opacity: 0;
