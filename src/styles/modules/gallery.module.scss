@@ -8,12 +8,14 @@
   flex-wrap: wrap;
   flex-direction: row;
   margin: 0;
+  justify-content: space-around;
 }
 
 .galleryItem {
   margin: 5px;
   list-style-type: none;
   display: flex;
+  height: 280px;
 }
 
 .galleryLink {
@@ -21,6 +23,11 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: all .3s ease;
+  &:hover {
+    filter: grayscale(100%);
+    opacity: .5;
+  }
 }
 
 .galleryImg {
