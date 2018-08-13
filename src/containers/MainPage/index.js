@@ -20,9 +20,8 @@ class MainPage extends Component {
     const { loading, isGalleryModalOpen } = this.props;
     return (
       <div className={styles.wrapper}>
-        {!loading &&
         <CSSTransition
-          in={true}
+          in={!loading}
           classNames='fade'
           appear={true}
           enter={true}
@@ -33,12 +32,10 @@ class MainPage extends Component {
         >
           <Loader/>
         </CSSTransition>
-        }
         <Dropper/>
         <Gallery/>
-        {isGalleryModalOpen &&
         <CSSTransition
-          in={true}
+          in={isGalleryModalOpen}
           classNames='fade'
           appear={true}
           enter={true}
@@ -49,7 +46,6 @@ class MainPage extends Component {
         >
           <ModalPortal/>
         </CSSTransition>
-        }
       </div>
     );
   }

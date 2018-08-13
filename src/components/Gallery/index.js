@@ -16,6 +16,7 @@ class Gallery extends Component {
     return (
       <div className={styles.wrapper}>
         <ul className={styles.galleryList}>
+
           {images && images.map(image => (
             <GalleryItem
               key={image.id}
