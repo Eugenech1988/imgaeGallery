@@ -10,7 +10,8 @@ import ModalPortal from 'containers/ModalPortal';
 import styles from 'styles/modules/main-page.module.scss';
 
 const mapStateToProps = state => ({
-  loading: state.loading
+  loading: state.loading,
+  isGalleryModalOpen: state.toggles.isGalleryModalOpen
 });
 
 const mapDispatchToProps = dispatch => ({});
@@ -18,12 +19,26 @@ const mapDispatchToProps = dispatch => ({});
 @connect(mapStateToProps)
 class MainPage extends Component {
   render() {
-    const { loading } = this.props;
+    const { loading, isGalleryModalOpen } = this.props;
     return (
       <div className={styles.wrapper}>
-        {!loading && <Loader/>}
+        {!loading &&
+        <CSSTransition
+          in={true}
+          classNames='fade'
+          appear={true}
+          enter={true}
+          exit={true}
+          timeout={500}
+          mountOnEnter={true}
+          unmountOnExit={true}
+        >
+          <Loader/>
+        </CSSTransition>
+        }
         <Dropper/>
         <Gallery/>
+        {isGalleryModalOpen &&
         <CSSTransition
           in={true}
           classNames='fade'
@@ -36,13 +51,15 @@ class MainPage extends Component {
         >
           <ModalPortal/>
         </CSSTransition>
+        }
       </div>
     );
   }
 }
 
 MainPage.propTypes = {
-  loading: PropTypes.bool
+  loading: PropTypes.bool,
+  isGalleryModalOpen: PropTypes.bool
 };
 
 export default MainPage;

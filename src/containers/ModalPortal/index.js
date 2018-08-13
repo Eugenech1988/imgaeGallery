@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import GalleryModal from 'components/ModalWindow';
+import GalleryModal from 'components/GalleryModal';
 
 class ModalPortal extends React.Component {
   constructor(props) {

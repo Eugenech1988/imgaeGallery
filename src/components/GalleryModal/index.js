@@ -3,48 +3,49 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import iconClose from 'assets/icons/close.svg';
+import { closeGalleryModal } from 'actions/toggleAction';
 import styles from 'styles/modules/galleryModal.module.scss';
 
-const mapStateToProps = state => ({});
+const mapStateToProps = state => ({
+  imgUrl: state.imgUrl.url
+});
 
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = dispatch => ({
+  closeGalleryModal: () => dispatch(closeGalleryModal())
+});
 
-@connect()
-class ModalWindow extends Component {
-  state = {
-    isOpen: true
-  };
+@connect(mapStateToProps, mapDispatchToProps)
+class GalleryModal extends Component {
 
   handleModalClick = ev => ev.stopPropagation();
 
   handleCloseModal = () => {
-    const {onClose} = this.props;
-    if (onClose) return onClose();
-    return this.setState({ isOpen: false });
+    const { closeGalleryModal } = this.props;
+    closeGalleryModal();
   };
 
   render() {
-    const { imgLink } = this.props;
-    const { isOpen } = this.state;
+    const { imgUrl } = this.props;
     return (
       <Fragment>
-        {isOpen &&
         <div className={styles.overlay} onClick={this.handleCloseModal}>
           <div className={styles.wrapper} onClick={this.handleModalClick}>
             <i className={styles.close} onClick={this.handleCloseModal}>
               <img src={iconClose} alt=''/>
             </i>
-            <img src={imgLink} alt=''/>
+            <img src={imgUrl} alt=''/>
           </div>
-        </div>}
+        </div>
       </Fragment>
     );
   }
 }
 
-ModalWindow.propTypes = {
+GalleryModal.propTypes = {
   onClose: PropTypes.func,
-  imgLink: PropTypes.string
+  imgUrl: PropTypes.string,
+  closeGalleryModal: PropTypes.func,
+  isGalleryModalOpen: PropTypes.bool
 };
 
-export default ModalWindow;
+export default GalleryModal;

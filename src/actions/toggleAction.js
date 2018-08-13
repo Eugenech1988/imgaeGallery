@@ -7,6 +7,6 @@ export const openGalleryModal = () => ({
   type: OPEN_GALLERY_MODAL
 });
 
-export const clostGalleryModal = () => ({
+export const closeGalleryModal = () => ({
   type: CLOSE_GALLERY_MODAL
 });

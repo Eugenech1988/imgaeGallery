@@ -30,3 +30,4 @@ export const uploadImage = (file) => dispatch => {
       console.log(err);
     })
 };
+
