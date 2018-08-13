@@ -1,12 +1,9 @@
 import {
-  UPLOAD_IMAGE,
   UPLOAD_IMAGE_SUCCESS,
   UPLOAD_IMAGE_ERROR
 } from 'constants/imagesConst';
 
-const initialState = {
-  links: [],
-};
+const initialState = [];
 
 export default (state = initialState, action) => {
   switch (action.type) {

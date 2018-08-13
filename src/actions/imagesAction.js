@@ -1,5 +1,4 @@
 import {
-  UPLOAD_IMAGE,
   UPLOAD_IMAGE_ERROR,
   UPLOAD_IMAGE_SUCCESS
 } from 'constants/imagesConst';
