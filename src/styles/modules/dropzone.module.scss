@@ -1,0 +1,37 @@
+.wrapper {
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.dropZone {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px dashed #dcdcdc;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: border-color .3s ease;
+  background-color: #fff;
+  &:hover {
+    border-color: #666;
+    .notify {
+      color: #666
+    }
+  }
+}
+
+.notify {
+  color: #c9c9c9;
+  transition: color .3s ease;
+}
+
+@media(max-width: 767px) {
+  .wrapper {
+    padding: 15px;
+  }
+}
